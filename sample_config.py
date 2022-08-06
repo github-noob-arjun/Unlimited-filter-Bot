@@ -23,7 +23,7 @@ class Config(object):
 
 
     # Your database name from mongoDB
-    DATABASE_NAME = str(os.environ.get("DATABASE_NAME", "Cluster0"))
+    DATABASE_NAME = str(os.environ.get("DATABASE_NAME", "Unlimetedfilterb"))
 
 
     # ID of users that can use the bot commands
