@@ -9,11 +9,11 @@ else:
  
 myclient = pymongo.MongoClient(Config.DATABASE_URI)
 mydb = myclient[Config.DATABASE_NAME]
-
+mycol = mydb["user"]
 
 
 async def add_filter(grp_id, text, reply_text, btn, file, alert):
-    mycol = mydb[str(grp_id)]
+    #mycol = mydb[str(grp_id)]
     # mycol.create_index([('text', 'text')])
 
     data = {
@@ -31,7 +31,7 @@ async def add_filter(grp_id, text, reply_text, btn, file, alert):
              
      
 async def find_filter(group_id, name):
-    mycol = mydb[str(group_id)]
+   # mycol = mydb[str(group_id)]
     
     query = mycol.find( {"text":name})
     # query = mycol.find( { "$text": {"$search": name}})
@@ -50,7 +50,7 @@ async def find_filter(group_id, name):
 
 
 async def get_filters(group_id):
-    mycol = mydb[str(group_id)]
+   # mycol = mydb[str(group_id)]
 
     texts = []
     query = mycol.find()
@@ -64,7 +64,7 @@ async def get_filters(group_id):
 
 
 async def delete_filter(message, text, group_id):
-    mycol = mydb[str(group_id)]
+   # mycol = mydb[str(group_id)]
     
     myquery = {'text':text }
     query = mycol.count_documents(myquery)
@@ -84,7 +84,7 @@ async def del_all(message, group_id, title):
         await message.edit_text(f"Nothing to remove in {title}!")
         return
         
-    mycol = mydb[str(group_id)]
+   # mycol = mydb[str(group_id)]
     try:
         mycol.drop()
         await message.edit_text(f"All filters from {title} has been removed")
@@ -94,7 +94,7 @@ async def del_all(message, group_id, title):
 
 
 async def count_filters(group_id):
-    mycol = mydb[str(group_id)]
+   # mycol = mydb[str(group_id)]
 
     count = mycol.count()
     if count == 0:
