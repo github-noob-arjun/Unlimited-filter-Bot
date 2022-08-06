@@ -26,7 +26,7 @@ from plugins.helpers import parser,split_quotes
 
 
 
-@Client.on_message(filters.command(Config.ADD_FILTER_CMD) & filters.user(Config.AUTH_USERS))
+@Client.on_message(filters.command(["add"]) & filters.user(Config.AUTH_USERS))
 async def addfilter(client, message):
       
     userid = message.from_user.id
@@ -175,7 +175,7 @@ async def addfilter(client, message):
     )
 
 
-@Client.on_message(filters.command('viewfilters') & filters.user(Config.AUTH_USERS))
+@Client.on_message(filters.command(["viewfilters"]) & filters.user(Config.AUTH_USERS))
 async def get_all(client, message):
     
     chat_type = message.chat.type
@@ -233,7 +233,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Client.on_message(filters.command(Config.DELETE_FILTER_CMD) & filters.user(Config.AUTH_USERS))
+@Client.on_message(filters.command(["delfilter"]) & filters.user(Config.AUTH_USERS))
 async def deletefilter(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -278,7 +278,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Client.on_message(filters.command(Config.DELETE_ALL_CMD) & filters.user(Config.AUTH_USERS))
+@Client.on_message(filters.command(["delall"]) & filters.user(Config.AUTH_USERS))
 async def delallconfirm(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
