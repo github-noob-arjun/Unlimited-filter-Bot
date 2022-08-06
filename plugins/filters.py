@@ -7,6 +7,7 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from sample_config import Config
+AUTH_USERS = Config.AUTH_USERS
 
 from database.filters_mdb import(
    add_filter,
@@ -23,7 +24,7 @@ from plugins.helpers import parser,split_quotes
 
 
 
-@Client.on_message(filters.command(["add"]) & filters.user(Config.AUTH_USERS), group=3)
+@Client.on_message(filters.command(["add"]) & filters.user(AUTH_USERS))
 async def addfilter(client, message):
       
     userid = message.from_user.id
