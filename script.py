@@ -8,7 +8,7 @@ There is no practical limits for my filtering capacity :)
 See <i>/help</i> for commands and more details.</b>
 
 <i><b>For your bot editing</i></b>
-<b>Contact :- @Github-Noob</b>
+<b>Contact :- @Github_Noob</b>
 """
 
 
