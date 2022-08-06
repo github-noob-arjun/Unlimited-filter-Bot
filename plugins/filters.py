@@ -24,7 +24,7 @@ from plugins.helpers import parser,split_quotes
 
 
 
-@Client.on_message(filters.command(["add"]) & filters.user(AUTH_USERS))
+@Client.on_message(filters.command(["add"]))
 async def addfilter(client, message):
       
     userid = message.from_user.id
