@@ -1,5 +1,8 @@
 import os
 import time
+import re
+
+id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
 
