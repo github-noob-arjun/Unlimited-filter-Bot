@@ -217,7 +217,9 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Command Help", callback_data="help_data")
+                    InlineKeyboardButton("✨ Join My Group ✨", url="https://t.me/MovieJunctionGrp2")
+                ],[
+                    InlineKeyboardButton("💢 Join My Channel 💢", url="https://t.me/Mj_Index")
                 ]
             ]
         ),
@@ -250,27 +252,6 @@ async def help(client, message):
                     InlineKeyboardButton("BOT Channel", url="https://t.me/TroJanzHEX"),
                     InlineKeyboardButton("Support Group", url="https://t.me/TroJanzSupport")
                 ]
-            ]
-        ),
-        quote=True
-    )
-
-
-@trojanz.on_message(filters.command('about') & filters.private)
-async def about(client, message):
-    await message.reply_text(
-        text=Script.ABOUT_MSG,
-        disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "SOURCE CODE", url="https://github.com/TroJanzHEX/Unlimited-Filter-Bot")
-                ],
-                [
-                    InlineKeyboardButton("BACK", callback_data="help_data"),
-                    InlineKeyboardButton("CLOSE", callback_data="close_data"),
-                ]                
             ]
         ),
         quote=True
