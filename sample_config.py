@@ -25,7 +25,7 @@ class Config(object):
 
     # ID of users that can use the bot commands
     # AUTH_USERS = set(str(x) for x in os.environ.get("AUTH_USERS", "").split())
-    AUTH_USERS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
+    AUTH_USERS = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ['ADMINS'].split()]
 
     # To save user details (Usefull for getting userinfo and total user counts)
     # May reduce filter capacity :(
