@@ -1,4 +1,5 @@
-pyrogram==1.4.12
+# pyrogram==1.4.12
+https://github.com/subinps/pyrogram/archive/master.zip
 TgCrypto
 umongo
 dnspython
