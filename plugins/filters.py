@@ -154,7 +154,7 @@ async def addfilter(client, message):
     elif message.reply_to_message and message.reply_to_message.text:
         try:
             fileid = None
-            reply_text, btn, alert = parser(message.reply_to_message.text.html, text)
+            reply_text, btn, alert = parser(message.reply_to_message.text.html.replace("*", "**"), text.replace("*", (**))
         except:
             reply_text = ""
             btn = "[]"
@@ -163,8 +163,7 @@ async def addfilter(client, message):
     else:
         return
     
-    re_reply_text = reply_text.text.replace("*", "**")
-    await add_filter(grp_id, text, re_reply_text, btn, fileid, alert)
+    await add_filter(grp_id, text, reply_text, btn, fileid, alert)
 
     await message.reply_text(
         f"Filter for  `{text}`  added in  **{title}**",
