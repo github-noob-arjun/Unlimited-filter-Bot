@@ -163,7 +163,8 @@ async def addfilter(client, message):
     else:
         return
     
-    await add_filter(grp_id, text, reply_text, btn, fileid, alert)
+    re_reply_text = reply_text.text.replace("*", "**")
+    await add_filter(grp_id, text, re_reply_text, btn, fileid, alert)
 
     await message.reply_text(
         f"Filter for  `{text}`  added in  **{title}**",
