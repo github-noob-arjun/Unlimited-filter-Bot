@@ -154,7 +154,7 @@ async def addfilter(client, message):
     elif message.reply_to_message and message.reply_to_message.text:
         try:
             fileid = None
-            reply_text, btn, alert = parser(message.reply_to_message.text.html.replace("*", "**"), text.replace("*", (**))
+            reply_text, btn, alert = parser(message.reply_to_message.text.html.replace("*", "**"), text.replace("*", **))
         except:
             reply_text = ""
             btn = "[]"
